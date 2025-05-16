@@ -62,7 +62,6 @@ Document *document_desserialize(char *path) {
 
                 // TODO add to links
                 add_links(links, linkId);
-
                 linkBufferIdx = 0;
             } else if (ch != '(') { // skip first parenthesis of the link
                 assert(linkBufferIdx < linkBufferSize);
@@ -81,7 +80,6 @@ Document *document_desserialize(char *path) {
     // TODO
     document->body = body;
     document->links = links;
-
     fclose(f);
     return document;
 }
